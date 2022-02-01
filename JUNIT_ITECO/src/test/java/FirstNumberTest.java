@@ -14,4 +14,9 @@ public class FirstNumberTest extends BaseTest {
     public void checkFirstNumEndsWithNum(){
         Assertions.assertEquals(5,textEndsWithNum.getFirstNumber(),"последнее число не равно 5");
     }
+     @Test
+    public void checkFirstNumException(){
+        Throwable exception = Assertions.assertThrows(RuntimeException.class,
+                ()-> stringHelper.getFirstNumber(),"Невозможно найти число в строке");
+    }
 }
